@@ -55,10 +55,7 @@
                     <div class="finlance_box_img">
                         <div class="finlance_img">
                             <img data-src="{{asset('assets/front/img/'.$bs->intro_bg)}}" class="img-fluid lazy" alt="">
-                        </div>
-                        <div class="play_box">
-                            <a href="{{$bs->intro_section_video_link}}" class="play_btn"><i class="fas fa-play"></i></a>
-                        </div>
+                        </div>                        
                     </div>
                 </div>
                 <div class="col-lg-6">
