@@ -28,25 +28,19 @@
 <div class="product-area">
     <div class="container">
         <div class="row justify-content-between align-items-center">
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-3">
                 <div class="shop-search mt-30">
                     <input type="text" placeholder="Search Keywords" class="input-search" name="search" value="{{request()->input('search') ? request()->input('search') : ''}}">
                     <i  class="fas fa-search input-search-btn cursor-pointer"></i>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="shop-dropdown mt-30 text-right">
-                    <select name="type" id="type_sort">
-                        <option value="new" {{ request()->input('type') == 'new' ? 'selected' : '' }}>{{__('Newest Product')}}</option>
-                        <option value="old" {{ request()->input('type') == 'old' ? 'selected' : '' }}>{{__('Oldest Product')}}</option>
-
-                        @if ($bex->catalog_mode == 0)
-                            <option value="hight-to-low" {{ request()->input('type') == 'high-to-low' ? 'selected' : '' }}>{{__('High To Low')}}</option>
-                            <option value="low-to-high" {{ request()->input('type') == 'low-to-high' ? 'selected' : '' }}>{{__('Low To High')}}</option>
-                        @endif
-                    </select>
+            <div class="col-lg-9 col-md-9 col-sm-9">
+                <div class="mt-30 text-left">
+                @foreach ($categories as $category)
+                <img class="lazy"  data-src="{{asset('assets/front/img_product/'. $category->name .'.jpg')}}" alt="">
+                @endforeach
                 </div>
-            </div>
+            </div>      
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-3 col-md-5 col-sm-7 order-2 order-lg-1">
