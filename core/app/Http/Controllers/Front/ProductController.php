@@ -29,8 +29,7 @@ class ProductController extends Controller
     }
 
     public function product(Request $request)
-    {
-
+    {        
         $bex = BasicExtra::first();
         if ($bex->is_shop == 0) {
             return back();
@@ -106,7 +105,8 @@ class ProductController extends Controller
         }
 
         $data['version'] = $version;
-
+        $data['category_id'] = $request->category_id;
+              
         return view('front.product.product', $data);
     }
 
