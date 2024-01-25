@@ -18,4 +18,16 @@ class PdfController extends Controller
      ]); 
 
     }
+
+    function dwonloadPdf()  {
+        // Get path to existing PDF file      
+        $path = storage_path('app/pdfs/doc.pdf');
+    //    $pdfPath = public_path('files/document.pdf');
+
+    return response()->file($path, [
+        'Content-Type' => 'application/pdf',
+        'Content-Disposition' => 'attachment'
+     ]); 
+
+    }
 }
