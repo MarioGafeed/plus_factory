@@ -62,82 +62,8 @@
                                 @endforeach
                             </ul>
                         </div>
-                    </div>
-                    @if($be->popular_tags)
-                    <div class="shop-box shop-tag mt-30">
-                        <div class="sidebar-title">
-                            <h4 class="title">{{__('Populer Tags')}}</h4>
-                        </div>
-                        <div class="tag-item">
-                            <ul>
-                                <li class="{{ request()->input('tag') == '' ? 'active-search' : '' }}"><a data-href="" class="tag-id cursor-pointer">{{__('All')}}</a></li>
-                                @foreach (explode(',',$be->popular_tags) as $tag)
-                                <li class="{{ request()->input('tag') == $tag ? 'active-search' : '' }}"><a data-href="{{$tag}}" class="tag-id cursor-pointer">{{convertUtf8($tag)}}</a></li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                    @endif
-
-                    @if ($bex->product_rating_system == 1 && $bex->catalog_mode == 0)
-                    <div class="shop-box shop-filter mt-30">
-                        <div class="sidebar-title">
-                            <h4 class="title">{{__('Filter Products')}}</h4>
-                        </div>
-                        <div class="filter-item">
-                             <ul class="checkbox_common checkbox_style2">
-                                <li>
-                                    <input type="radio" class="review_val" name="review_value"
-                                    {{request()->input('review') == '' ? 'checked' : ''}}
-                                    id="checkbox4" value="">
-                                    <label for="checkbox4"><span></span> {{__('Show All')}}</label>
-                                </li>
-
-                                <li>
-                                    <input type="radio" class="review_val" name="review_value" id="checkbox5" value="4" {{request()->input('review') == 4 ? 'checked' : ''}}
-                                    id="checkbox4" value="all">
-                                    <label for="checkbox5"><span></span>4 {{__('Star and higher')}}</label>
-                                </li>
-
-                                <li>
-                                    <input type="radio" class="review_val" name="review_value" id="checkbox6" value="3" {{request()->input('review') == 3 ? 'checked' : ''}}
-                                    id="checkbox4" value="all">
-                                    <label for="checkbox6"><span></span>3 {{__('Star and higher')}}</label>
-                                </li>
-
-                                <li>
-                                    <input type="radio" class="review_val" name="review_value" id="checkbox7" value="2" {{request()->input('review') == 2 ? 'checked' : ''}}
-                                    id="checkbox4" value="all">
-                                    <label for="checkbox7"><span></span>2 {{__('Star and higher')}}</label>
-                                </li>
-
-                                <li>
-                                    <input type="radio" class="review_val" name="review_value" id="checkbox8" value="1" {{request()->input('review') == 1 ? 'checked' : ''}}
-                                    id="checkbox4" value="all">
-                                    <label for="checkbox8"><span></span>1 {{__('Star and higher')}}</label>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    @endif
-
-                    @if ($bex->catalog_mode == 0)
-                        <div class="shop-box shop-price mt-30">
-                            <div class="sidebar-title">
-                                <h4 class="title">{{__('Filter By Price')}}</h4>
-                            </div>
-                            <div class="price-item">
-                                <div class="price-range-box">
-                                <form action="#">
-                                    <div id="slider-range"></div>
-                                    <span>{{__('Price')}}: </span>
-                                    <input type="text" name="text" id="amount" />
-                                    <button class="btn filter-button" type="button">{{__('Filter')}}</button>
-                                </form>
-                            </div>
-                            </div>
-                        </div>
-                    @endif
+                    </div>                                   
+                    
                 </div>
             </div>
             <div class="col-lg-9 order-1 order-lg-2">
