@@ -139,7 +139,7 @@ Route::group(['middleware' => 'setlang'], function () {
   Route::post('/coupon', 'Front\ProductController@coupon')->name('front.coupon');
   // Add Via Mario
   Route::get('/pdf/{slug}', 'Front\PdfController@showPdf')->name('show.pdf');
-  Route::get('/pdf', 'Front\PdfController@downloadPdf')->name('download.pdf');
+  Route::get('/pdf/download/{slug}', 'Front\PdfController@downloadPdf')->name('download.pdf');
 
 
   // review

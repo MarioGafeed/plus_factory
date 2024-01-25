@@ -20,9 +20,9 @@ class PdfController extends Controller
 
     }
 
-    function dwonloadPdf()  {
+    function downloadPdf($fileName)  {
         // Get path to existing PDF file      
-        $path = storage_path('app/pdfs/doc.pdf');
+        $path = storage_path('app/pdfs/'. $fileName . '.pdf');
     //    $pdfPath = public_path('files/document.pdf');
 
     return response()->file($path, [
