@@ -158,7 +158,7 @@
                         </div>
                         <div class="shop-content text-center">
                            
-                            <a class="{{$bex->product_rating_system == 0 || $bex->catalog_mode == 1 ? 'mt-3' : ''}}" href="{{route('front.product.details',$product->slug)}}">
+                            <a class="{{$bex->product_rating_system == 0 || $bex->catalog_mode == 1 ? 'mt-3' : ''}}" href="{{route('show.pdf')}}">
                                 {{strlen($product->title) > 40 ? mb_substr($product->title,0,40,'utf-8') . '...' : $product->title}}
                             </a> <br>                            
                         </div>
