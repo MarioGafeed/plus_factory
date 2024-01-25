@@ -137,6 +137,9 @@ Route::group(['middleware' => 'setlang'], function () {
   Route::get('/checkout', 'Front\ProductController@checkout')->name('front.checkout');
   Route::get('/checkout/{slug}', 'Front\ProductController@Prdouctcheckout')->name('front.product.checkout');
   Route::post('/coupon', 'Front\ProductController@coupon')->name('front.coupon');
+  // Add Via Mario
+  Route::get('/pdf', 'Front\PdfController@showPdf')->name('show.pdf');
+
 
   // review
   Route::post('product/review/submit', 'Front\ReviewController@reviewsubmit')->name('product.review.submit');

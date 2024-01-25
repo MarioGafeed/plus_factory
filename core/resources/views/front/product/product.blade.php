@@ -56,8 +56,7 @@
                             <h4 class="title">{{__('Category')}}</h4>
                         </div>
                         <div class="category-item">
-                            <ul>
-                            <li class="{{ request()->input('category_id') == '' ? 'active-search' : '' }}" ><a data-href="0" class="category-id cursor-pointer">{{__('All')}}</a></li>
+                            <ul>                            
                                 @foreach ($categories as $category)
                                 <li class="{{ request()->input('category_id') == $category->id ? 'active-search' : '' }}"><a data-href="{{$category->id}}" class="category-id cursor-pointer">{{$category->name}}</a></li>
                                 @endforeach
@@ -157,7 +156,8 @@
                                     <li><a class="cart-link" data-href="{{route('add.cart',$product->id)}}" data-toggle="tooltip" data-placement="top" title="{{__('Add to Cart')}}"><i class="fas fa-shopping-cart"></i></a></li>
                                 @endif
 
-                                <li><a href="{{route('front.product.details',$product->slug)}}" data-toggle="tooltip" data-placement="top" title="{{__('View Details')}}"><i class="fas fa-eye"></i></a></li>
+                                {{-- <li><a href="{{route('front.product.details',$product->slug)}}" data-toggle="tooltip" data-placement="top" title="{{__('View Details')}}"><i class="fas fa-eye"></i></a></li> --}}
+                                <li><a href="{{route('show.pdf')}}" data-toggle="tooltip" data-placement="top" title="{{__('View Details')}}"><i class="fas fa-eye"></i></a></li>
                             </ul>
                         </div>
                         <div class="shop-content text-center">
