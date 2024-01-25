@@ -151,14 +151,14 @@
                             <img class="lazy" data-src="{{asset('assets/front/img/product/featured/'.$product->feature_image)}}" alt="">
                             <ul>
                                 @if ($bex->catalog_mode == 0)
-                                <li><a href="{{route('show.pdf')}}" data-toggle="tooltip" data-placement="top" title="{{__('Open File')}}"><i class="fas fa-eye"></i></a></li>                                    
+                                <li><a href="{{route('show.pdf',$product->slug)}}" data-toggle="tooltip" data-placement="top" title="{{__('Open File')}}"><i class="fas fa-eye"></i></a></li>                                    
                                 @endif                                
-                                <li><a href="{{route('front.product.checkout',$product->slug)}}" data-toggle="tooltip" data-placement="top" title="{{__('Download Now')}}"><i class="fas fa-download"></i></a></li>                                    
+                                <li><a href="{{route('download.pdf',$product->slug)}}" data-toggle="tooltip" data-placement="top" title="{{__('Download Now')}}"><i class="fas fa-download"></i></a></li>                                    
                             </ul>
                         </div>
                         <div class="shop-content text-center">
                            
-                            <a class="{{$bex->product_rating_system == 0 || $bex->catalog_mode == 1 ? 'mt-3' : ''}}" href="{{route('show.pdf')}}">
+                            <a class="{{$bex->product_rating_system == 0 || $bex->catalog_mode == 1 ? 'mt-3' : ''}}" href="{{route('show.pdf',$product->slug)}}">
                                 {{strlen($product->title) > 40 ? mb_substr($product->title,0,40,'utf-8') . '...' : $product->title}}
                             </a> <br>                            
                         </div>
