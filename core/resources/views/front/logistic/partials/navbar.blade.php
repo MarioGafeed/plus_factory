@@ -108,6 +108,7 @@
                                                     @if (!array_key_exists("children",$link))
                                                         {{--- Level1 links which doesn't have dropdown menus ---}}
                                                         <li><a href="{{$href}}" target="{{$link["target"]}}">{{$link["text"]}}</a></li>
+                                                        <a href="{{ route(displayprofile.pdf) }}"></a>
 
                                                     @else
                                                         <li class="menu-item-has-children">

@@ -140,6 +140,7 @@ Route::group(['middleware' => 'setlang'], function () {
   // Add Via Mario
   Route::get('/pdf/{slug}', 'Front\PdfController@showPdf')->name('show.pdf');
   Route::get('/pdf/download/{slug}', 'Front\PdfController@downloadPdf')->name('download.pdf');
+  Route::get('/pdfprofile', 'Front\PdfController@displayCompanyProfile')->name('displayprofile.pdf');
 
 
   // review
