@@ -319,7 +319,7 @@
   {{-- whatsapp init code --}}
   @if ($bex->is_whatsapp == 1)
     <script type="text/javascript">
-      var whatsapp_popup = {{ $bex->whatsapp_popup }};
+      var whatsapp_popup = +201008830000;
       var whatsappImg = "{{ asset('assets/front/img/whatsapp.svg') }}";
       $(function() {
         $('#WAButton').floatingWhatsApp({
