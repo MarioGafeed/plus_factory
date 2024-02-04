@@ -319,11 +319,11 @@
   {{-- whatsapp init code --}}
   @if ($bex->is_whatsapp == 1)
     <script type="text/javascript">
-      var whatsapp_popup = +201008830000;
+      var whatsapp_popup = {{ $bex->whatsapp_popup }};
       var whatsappImg = "{{ asset('assets/front/img/whatsapp.svg') }}";
       $(function() {
         $('#WAButton').floatingWhatsApp({
-          phone: "{{ $bex->whatsapp_number }}", //WhatsApp Business phone number
+          phone: "+201008830000", //WhatsApp Business phone number
           headerTitle: "{{ $bex->whatsapp_header_title }}", //Popup Title
           popupMessage: `{!! nl2br($bex->whatsapp_popup_message) !!}`, //Popup Message
           showPopup: whatsapp_popup == 1 ? true : false, //Enables popup display
