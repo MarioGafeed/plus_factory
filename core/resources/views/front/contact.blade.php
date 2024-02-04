@@ -50,7 +50,7 @@
                     <div class="col-lg-4 single-info-col">
                         <div class="single-info wow fadeInRight" data-wow-duration="1s" data-wow-delay=".4s"
                             style="visibility: visible; animation-duration: 1s; animation-delay: 0.4s; animation-name: fadeInRight;">
-                            <div class="icon-wrapper"><i class="far fa-envelope"></i></div>
+                            <div class="icon-wrapper"><i class="fas fa-phone"></i></div>
                             <div class="info-txt">
                                 <h4 class="widget_title">{{ __('Export Sale') }}</h4>
                                 <ul class="widget_link">
