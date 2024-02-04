@@ -86,11 +86,11 @@ class ProductController extends Controller
             })
             ->when($type, function ($query, $type) {
                 if ($type == 'new') {
-                    return $query->orderBy('id', 'DESC');
+                    return $query->orderBy('id', 'ASC');
                 } elseif ($type == 'old') {
                     return $query->orderBy('id', 'ASC');
                 } elseif ($type == 'high-to-low') {
-                    return $query->orderBy('current_price', 'DESC');
+                    return $query->orderBy('current_price', 'ASC');
                 } elseif ($type == 'low-to-high') {
                     return $query->orderBy('current_price', 'ASC');
                 }
@@ -108,6 +108,87 @@ class ProductController extends Controller
         $data['category_id'] = $request->category_id;
               
         return view('front.product.product', $data);
+    }
+// Add By Mario
+    function products_all(Request $request) {
+        $bex = BasicExtra::first();
+        if ($bex->is_shop == 0) {
+            return back();
+        }
+
+        if (session()->has('lang')) {
+            $currentLang = Language::where('code', session()->get('lang'))->first();
+        } else {
+            $currentLang = Language::where('is_default', 1)->first();
+        }
+        $data['currentLang'] = $currentLang;
+
+        $bs = $currentLang->basic_setting;
+        $be = $currentLang->basic_extended;
+        $lang_id = $currentLang->id;
+
+        $data['categories'] = Pcategory::where('status', 1)->where('language_id', $currentLang->id)->get();
+
+        $search = $request->search;
+        $minprice = $request->minprice;
+        $maxprice = $request->maxprice;
+        $category = $request->category_id;
+        $tag = $request->tag;
+
+        if ($request->type) {
+            $type = $request->type;
+        } else {
+            $type = 'new';
+        }
+        $tag = $request->tag;
+        $review = $request->review;
+
+        $data['products'] =
+            Product::when($category, function ($query, $category) {
+                return $query->where('category_id', $category);
+            })
+            ->when($lang_id, function ($query, $lang_id) {
+                return $query->where('language_id', $lang_id);
+            })
+            ->when($search, function ($query, $search) {
+                return $query->where('title', 'like', '%' . $search . '%');
+            })
+            ->when($minprice, function ($query, $minprice) {
+                return $query->where('current_price', '>=', $minprice);
+            })
+            ->when($maxprice, function ($query, $maxprice) {
+                return $query->where('current_price', '<=', $maxprice);
+            })
+            ->when($tag, function ($query, $tag) {
+                return $query->where('tags', 'like', '%' . $tag . '%');
+            })
+            ->when($review, function ($query, $review) {
+                return $query->where('rating', '>=', $review);
+            })
+            ->when($type, function ($query, $type) {
+                if ($type == 'new') {
+                    return $query->orderBy('id', 'ASC');
+                } elseif ($type == 'old') {
+                    return $query->orderBy('id', 'ASC');
+                } elseif ($type == 'high-to-low') {
+                    return $query->orderBy('current_price', 'ASC');
+                } elseif ($type == 'low-to-high') {
+                    return $query->orderBy('current_price', 'ASC');
+                }
+            })
+
+            ->where('status', 1)->paginate(9);
+
+        $version = $be->theme_version;
+
+        if ($version == 'dark') {
+            $version = 'default';
+        }
+
+        $data['version'] = $version;
+        $data['category_id'] = $request->category_id;
+
+        return view('front.product.products_all', $data);
     }
 
     public function productDetails($slug)

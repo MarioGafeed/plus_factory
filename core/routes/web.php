@@ -141,6 +141,7 @@ Route::group(['middleware' => 'setlang'], function () {
   Route::get('/pdf/{slug}', 'Front\PdfController@showPdf')->name('show.pdf');
   Route::get('/pdf/download/{slug}', 'Front\PdfController@downloadPdf')->name('download.pdf');
   Route::get('/pdfprofile', 'Front\PdfController@displayCompanyProfile')->name('displayprofile.pdf');
+  Route::get('/products_all', 'Front\ProductController@products_all')->name('products.all');
 
 
   // review
@@ -1314,8 +1315,8 @@ if (!app()->runningInConsole()) {
         $routeName = 'front.portfolios';
       } elseif ($type == 'products') {
         $action = 'Front\ProductController@product';
-        $routeName = 'front.product';
-      } elseif ($type == 'cart') {
+        $routeName = 'front.product';      
+      }elseif ($type == 'cart') {
         $action = 'Front\ProductController@cart';
         $routeName = 'front.cart';
       } elseif ($type == 'product_checkout') {
