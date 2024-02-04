@@ -66,7 +66,7 @@
                   <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="shop-item">
                         <div class="shop-thumb">
-                            <img class="lazy" data-src="{{asset('assets/front/img/product/featured/'.$product->feature_image)}}" alt="" height="175">
+                            <img class="lazy" data-src="{{asset('assets/front/img/product/featured/'.$product->feature_image)}}" alt="" height="175" width="200">
                             <ul>
                                 @if ($bex->catalog_mode == 0)
                                 <li><a href="{{route('show.pdf',$product->slug)}}" data-toggle="tooltip" data-placement="top" title="{{__('Open File')}}"><i class="fas fa-eye"></i></a></li>                                    
