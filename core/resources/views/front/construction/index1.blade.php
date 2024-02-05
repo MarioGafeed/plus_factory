@@ -51,11 +51,7 @@
     <section class="finlance_about about_v1 pt-100 pb-100">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6">                    
-                        <div class="finlance_img">
-                            <img data-src="{{asset('assets/front/img/'.$bs->intro_bg)}}" class="img-fluid lazy" alt="" width="350">
-                        </div>                                            
-                </div>
+                
                 <div class="col-lg-6">
                     <div class="finlance_content_box">
                         <div class="section_title">
