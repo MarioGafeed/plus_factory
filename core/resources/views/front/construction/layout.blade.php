@@ -182,7 +182,7 @@
                                 <ul class="widget_link">
                                     <li><a href="mailto:local.sales@egkt-cc.com">local.sales@egkt-cc.com</a></li>
                                     <a href="tel:01017799776"><i class="fa fa-phone"></i> +2 010-1779-9776</a><br>
-                                    <a href="tel:01559690069"><i class="fa fa-phone"></i> +2 0155-969-0069 </a>
+                                    <a href="tel:01559690069"><i class="fa fa-phone"></i> +2 010-0151-6631 </a>
                                 </ul>
                             </div>
                         </div>
