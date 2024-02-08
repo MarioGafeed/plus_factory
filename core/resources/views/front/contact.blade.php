@@ -121,16 +121,7 @@
                             </div>
                         </div>
                     </form>
-                </div>
-                <div class="col-lg-6">
-                    <div class="map-wrapper">
-                        <div id="map">
-                            <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0"
-                                marginwidth="0"
-                                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q={{ $bex->latitude }},%20{{ $bex->longitude }}+(My%20Business%20Name)&amp;t=&amp;z={{ $bex->map_zoom }}&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
-                        </div>
-                    </div>
-                </div>
+                </div>             
             </div>
         </div>
     </div>
