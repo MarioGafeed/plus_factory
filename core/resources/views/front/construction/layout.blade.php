@@ -190,7 +190,7 @@
                             <div class="widget_box newsletter_box">
                                 <h4 class="widget_title">{{ __('Export Sale') }}</h4>
                                 <ul class="widget_link">
-                                    <li><a href="mailto:ussama.francis@egkt.com">ussama.francis@egkt.com</a></li>
+                                    <li><a href="mailto:ussama.francis@egkt-cc.com">ussama.francis@egkt-cc.com</a></li>
                                     <a href="tel:01008830000"><i class="fa fa-phone"></i> +2 010-088-30000</a><br>                                    
                                 </ul>                                
                             </div>
